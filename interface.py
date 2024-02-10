@@ -9,14 +9,14 @@ customtkinter.set_default_color_theme("green")
 root = customtkinter.CTk()
 root.title("Hash calculator")
 root.geometry('400x200')
-
 root.grid_columnconfigure(0, weight=1)
 
 def gethash():
     tohash=myinput.get()
     hashed=hash(tohash)
-    mytextbox.insert("0.0", str(hashed))
-    
+    myresult.configure(state="normal")
+    myresult.insert("0.0", str(hashed))
+    myresult.configure(state="disabled")    
 
 
 
@@ -26,8 +26,13 @@ myinput.grid(row=1, column =0, padx=10, pady=10, sticky="ew")
 mybutton = customtkinter.CTkButton(root, text='Calculate Hash', command=gethash)
 mybutton.grid(row=2, column= 0, padx = 10, pady= 10, sticky ="ew")
 
-mytextbox = customtkinter.CTkTextbox(root, height=20)
-mytextbox.grid(row=3, column=0, padx=10, pady=10, sticky="ew")
-mytextbox.configure(state="disabled")
+#mytextbox = customtkinter.CTkTextbox(root, height=20)
+#mytextbox.grid(row=3, column=0, padx=10, pady=10, sticky="ew")
+#mytextbox.configure(state="disabled")
+
+myresult = customtkinter.CTkTextbox(root)
+myresult.configure(state="disabled")
+myresult.grid(row=3, column=0, padx = 10, pady= 10, sticky ="ew")
+
 
 root.mainloop()
