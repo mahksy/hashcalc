@@ -10,7 +10,7 @@ customtkinter.deactivate_automatic_dpi_awareness()
 
 root = customtkinter.CTk()
 root.title("Hash calculator")
-root.geometry('300x150')
+root.geometry('400x150')
 root.grid_columnconfigure(1, weight=1)
 
 def gethash():
