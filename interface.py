@@ -15,6 +15,7 @@ root.grid_columnconfigure(0, weight=1)
 def gethash():
     tohash=myinput.get()
     hashed=hash(tohash)
+    mytextbox.insert("0.0", str(hashed))
     
 
 
@@ -27,5 +28,6 @@ mybutton.grid(row=2, column= 0, padx = 10, pady= 10, sticky ="ew")
 
 mytextbox = customtkinter.CTkTextbox(root, height=20)
 mytextbox.grid(row=3, column=0, padx=10, pady=10, sticky="ew")
+mytextbox.configure(state="disabled")
 
 root.mainloop()
