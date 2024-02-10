@@ -7,7 +7,6 @@ customtkinter.set_appearance_mode("Dark")
 customtkinter.set_default_color_theme("green")
 customtkinter.deactivate_automatic_dpi_awareness()
 
-
 root = customtkinter.CTk()
 root.title("Hash calculator")
 root.geometry('400x150')
@@ -31,15 +30,10 @@ myinput.grid(row=1, column =1, padx=10, pady=10, sticky="ew")
 mybutton = customtkinter.CTkButton(root, text='Calculate MD5 Hash', command=gethash)
 mybutton.grid(columnspan=2,row=2, column= 0, padx = 10, pady= 10, sticky ="ew")
 
-#mytextbox = customtkinter.CTkTextbox(root, height=20)
-#mytextbox.grid(row=3, column=0, padx=10, pady=10, sticky="ew")
-#mytextbox.configure(state="disabled")
-
 outputlabel = customtkinter.CTkLabel(root, text="Result: ")
 outputlabel.grid(row=3, column=0, padx=10, pady=10)
 
 myresult = customtkinter.CTkTextbox(root, height=15)
 myresult.grid(row=3, column=1, padx = 10, pady= 10, sticky ="ew")
-
 
 root.mainloop()
