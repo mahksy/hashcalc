@@ -10,8 +10,8 @@ customtkinter.deactivate_automatic_dpi_awareness()
 
 root = customtkinter.CTk()
 root.title("Hash calculator")
-root.geometry('300x200')
-root.grid_columnconfigure(0, weight=1)
+root.geometry('300x150')
+root.grid_columnconfigure(1, weight=1)
 
 def gethash():
     tohash=myinput.get()
@@ -22,19 +22,24 @@ def gethash():
     myresult.configure(state="disabled")    
 
 
+inputlabel = customtkinter.CTkLabel(root, text="Data to hash: ")
+inputlabel.grid(row=1, column=0, padx=10, pady=10)
 
-myinput = customtkinter.CTkEntry(root, placeholder_text=("test"))
-myinput.grid(row=1, column =0, padx=10, pady=10, sticky="ew")
+myinput = customtkinter.CTkEntry(root, placeholder_text=(""))
+myinput.grid(row=1, column =1, padx=10, pady=10, sticky="ew")
 
-mybutton = customtkinter.CTkButton(root, text='Calculate Hash', command=gethash)
-mybutton.grid(row=2, column= 0, padx = 10, pady= 10, sticky ="ew")
+mybutton = customtkinter.CTkButton(root, text='Calculate MD5 Hash', command=gethash)
+mybutton.grid(columnspan=2,row=2, column= 0, padx = 10, pady= 10, sticky ="ew")
 
 #mytextbox = customtkinter.CTkTextbox(root, height=20)
 #mytextbox.grid(row=3, column=0, padx=10, pady=10, sticky="ew")
 #mytextbox.configure(state="disabled")
 
-myresult = customtkinter.CTkTextbox(root, height=10)
-myresult.grid(row=3, column=0, padx = 10, pady= 10, sticky ="ew")
+outputlabel = customtkinter.CTkLabel(root, text="Result: ")
+outputlabel.grid(row=3, column=0, padx=10, pady=10)
+
+myresult = customtkinter.CTkTextbox(root, height=15)
+myresult.grid(row=3, column=1, padx = 10, pady= 10, sticky ="ew")
 
 
 root.mainloop()
